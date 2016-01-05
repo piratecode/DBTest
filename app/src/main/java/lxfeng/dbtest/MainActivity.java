@@ -2,7 +2,6 @@ package lxfeng.dbtest;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -46,26 +45,26 @@ public class MainActivity extends Activity {
         long startTimeTransaction = System.currentTimeMillis();
         memberDBService.insertMemberListWithTransaction(memberModelList);
         long endTimeTransaction = System.currentTimeMillis();
-        Log.e(TAG, "transaction insert time:" + (endTimeTransaction - startTimeTransaction));
+        //    Log.e(TAG, "transaction insert time:" + (endTimeTransaction - startTimeTransaction));
 
         long startTimeNomal = System.currentTimeMillis();
         memberDBService.insertMemberListNormal(memberModelList);
         long endTimeNormal = System.currentTimeMillis();
-        Log.e(TAG, "normal insert time:" + (endTimeNormal - startTimeNomal));
+        //    Log.e(TAG, "normal insert time:" + (endTimeNormal - startTimeNomal));
 
 
         long startGetNormal = System.currentTimeMillis();
         final List<MemberModel> normalList = memberDBService.getMemberListNormal();
         long endGetNormal = System.currentTimeMillis();
-        Log.e(TAG, "normal get time:" + (endGetNormal - startGetNormal));
+        //    Log.e(TAG, "normal get time:" + (endGetNormal - startGetNormal));
 
         long startGetOptimize = System.currentTimeMillis();
         List<MemberModel> optimizeList = memberDBService.getMemberListOptimize();
         long endGetOptimize = System.currentTimeMillis();
-        Log.e(TAG, "optimize get time:" + (endGetOptimize - startGetOptimize));
+        //    Log.e(TAG, "optimize get time:" + (endGetOptimize - startGetOptimize));
 
-        Log.e(TAG, "normallist size:" + normalList.size());
-        Log.e(TAG, "optimizelist size:" + optimizeList.size());
+        //    Log.e(TAG, "normallist size:" + normalList.size());
+        //    Log.e(TAG, "optimizelist size:" + optimizeList.size());
 
         memberDBService.closeDB();
 

@@ -4,7 +4,7 @@ package lxfeng.dbtest.db;
 public class DBConfig {
 
     public static final String DB_NAME = "test.db";
-    public static final int DB_VERSION = 5;
+    public static final int DB_VERSION = 6;
 
     public static final String CREATE_TAB_MEMNER =
             "create table member(_id integer primary key autoincrement,memberId varchar(64),memberName varchar(64),memberAge integer);";
